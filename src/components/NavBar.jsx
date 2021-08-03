@@ -43,8 +43,9 @@ function NavBar(props) {
 				<Navbar.Collapse id='logout-navbar-nav'>
 					<Nav className='collapse-navbar my-2 my-lg-0'>
 						<p onClick={props.onClick} className='navbar-right-content'>
-							<span className='signed-in-user-heading'>Signed in as:</span>
-							{props.loginInfo['Name']}
+							<span className='signed-in-user-heading'>Signed in as : </span>
+							<span className='signed-in-user-heading'> </span>
+							{' ' + props.loginInfo['Name']}
 						</p>
 						<div>
 							<p
