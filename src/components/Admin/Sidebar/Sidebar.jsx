@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
 import React, { useState } from 'react'
 import pcs_logo from '../../Images/pcs_logo.png'
 
@@ -219,72 +219,74 @@ const Sidebar = (props) => {
 	const handleProfileClick = () => setProfileClick(!profileClick)
 
 	return (
-		<Router>
-			<Container>
-				<Button clicked={click} onClick={() => handleClick()}></Button>
-				{/* <button className="menu-button" onClick={()=>handleClick()}></button> */}
-				<SidebarContainer>
-					{/* <Logo>
+		<Container>
+			<Button clicked={click} onClick={() => handleClick()}></Button>
+			{/* <button className="menu-button" onClick={()=>handleClick()}></button> */}
+			<SidebarContainer>
+				{/* <Logo>
                     <img src={pcs_logo} alt="logo" />
                 </Logo> */}
-					<SlickBar clicked={click}>
-						<Item
-							onClick={() => setClick(false)}
-							exact
-							activeClassName='active'
-							to='/'>
-							<i className='fas fa-home'></i>
-							<Text clicked={click}>Home</Text>
-						</Item>
-						<Item
-							onClick={() => setClick(false)}
-							activeClassName='active'
-							to='/leave'>
-							<i className='fas fa-pen-fancy'></i>
-							<Text clicked={click}>Leave</Text>
-						</Item>
-						<Item
-							onClick={() => setClick(false)}
-							activeClassName='active'
-							to='/holidays'>
-							<i className='fas fa-umbrella-beach'></i>
-							<Text clicked={click}>Holidays</Text>
-						</Item>
-						<Item
-							onClick={() => setClick(false)}
-							activeClassName='active'
-							to='/calender'>
-							<i className='fas fa-user'></i>
-							<Text clicked={click}>Calender</Text>
-						</Item>
-						<Item
-							onClick={() => setClick(false)}
-							activeClassName='active'
-							to='/about'>
-							<i className='fas fa-user'></i>
-							<Text clicked={click}>About</Text>
-						</Item>
-					</SlickBar>
-					<Profile clicked={profileClick}>
-						{/* <i className="fas fa-power-off"></i> */}
-						<img
-							onClick={() => handleProfileClick()}
-							src='https://picsum.photos/200'
-							alt='profile'
-						/>
-						<Details clicked={profileClick}>
-							<Name>
-								<h4>Admin</h4>
-								<a href='/#'>View Profile</a>
-							</Name>
-							<Logout>
-								<i className='fas fa-power-off'></i>
-							</Logout>
-						</Details>
-					</Profile>
-				</SidebarContainer>
-			</Container>
-		</Router>
+				<SlickBar clicked={click}>
+					<Item
+						onClick={() => setClick(false)}
+						exact
+						activeClassName='active'
+						to='/admin/home'>
+						<i className='fas fa-home'></i>
+						<Text clicked={click}>Home</Text>
+					</Item>
+					<Item
+						onClick={() => setClick(false)}
+						activeClassName='active'
+						exact
+						to='/leave'>
+						<i className='fas fa-pen-fancy'></i>
+						<Text clicked={click}>Leave</Text>
+					</Item>
+					<Item
+						onClick={() => setClick(false)}
+						activeClassName='active'
+						exact
+						to='/holidays'>
+						<i className='fas fa-umbrella-beach'></i>
+						<Text clicked={click}>Holidays</Text>
+					</Item>
+					<Item
+						onClick={() => setClick(false)}
+						activeClassName='active'
+						exact
+						to='/calender'>
+						<i className='fas fa-user'></i>
+						<Text clicked={click}>Calender</Text>
+					</Item>
+					<Item
+						onClick={() => setClick(false)}
+						activeClassName='active'
+						exact
+						to='/about'>
+						<i className='fas fa-user'></i>
+						<Text clicked={click}>About</Text>
+					</Item>
+				</SlickBar>
+				<Profile clicked={profileClick}>
+					{/* <i className="fas fa-power-off"></i> */}
+					<img
+						onClick={() => handleProfileClick()}
+						src='https://picsum.photos/200'
+						alt='profile'
+					/>
+					<Details clicked={profileClick}>
+						<Name>
+							<h4>Admin</h4>
+							<a href='/#'>View Profile</a>
+						</Name>
+						<Logout onClick={props.onlogout}>
+							<i className='fas fa-power-off'></i>
+						</Logout>
+					</Details>
+				</Profile>
+			</SidebarContainer>
+		</Container>
 	)
 }
 

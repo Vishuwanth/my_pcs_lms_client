@@ -1,14 +1,12 @@
-.form
-{
-    display: flex;
-    
-    flex-direction: column;
-    padding: 20px; 
-    box-shadow: 0 5px 20px -11px rgba(0, 0, 0, 0.75);
-    /* height: 80vh; */
+#role-form-outer-div .form {
+	display: flex;
+
+	flex-direction: column;
+	padding: 20px;
+	box-shadow: 0 5px 20px -11px rgba(0, 0, 0, 0.75);
+	/* height: 80vh; */
 }
 
-.label-option-container
-{
-    padding: 10px;
+.label-option-container {
+	padding: 10px;
 }
